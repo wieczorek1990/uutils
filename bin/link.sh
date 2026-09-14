@@ -8,9 +8,11 @@ function generate_util {
   cat << EOF
 #!/bin/sh
 # Util calling.
+
 set -e
 
-coreutils $util
+shift
+coreutils $util $@
 EOF
 }
 
