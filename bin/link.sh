@@ -3,7 +3,22 @@
 
 set -e
 
+function generate_util {
+  util="$1"
+  cat << EOF
+#!/bin/sh
+# Util calling.
+set -e
+
+coreutils $util
+EOF
+}
+
+dir="~/.local/bin"
+rm -rf "$dir"
+mkdir -p "$dir"
 for util in $(coreutils --list)
 do
-  echo $util
+  generate_util $util > $dir/$util
 done
+chmod +x $dir/*
