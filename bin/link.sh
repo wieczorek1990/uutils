@@ -14,7 +14,7 @@ coreutils $util
 EOF
 }
 
-dir="~/.local/bin"
+dir="$HOME/.local/bin"
 rm -rf "$dir"
 mkdir -p "$dir"
 for util in $(coreutils --list)
