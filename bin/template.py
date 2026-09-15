@@ -6,9 +6,11 @@ import sys
 from jinja2 import FileSystemLoader
 from pathlib import Path
 
+template_path = "./bin/util.sh"
+
 base_dir = Path(__file__).resolve().parent.parent
 environment = jinja2.Environment(loader=FileSystemLoader(base_dir))
-template = environment.get_template("./bin/util.md")
+template = environment.get_template(template_path)
 
 
 def main() -> None:
