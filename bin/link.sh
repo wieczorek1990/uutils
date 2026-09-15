@@ -5,15 +5,7 @@ set -e
 
 function generate_util {
   util="$1"
-  cat << EOF
-#!/bin/sh
-# Util calling.
-
-set -e
-
-shift
-coreutils $util $@
-EOF
+  ./bin/template.py "$util"
 }
 
 dir="$HOME/.local/bin"
