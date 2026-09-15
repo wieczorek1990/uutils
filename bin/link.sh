@@ -1,5 +1,5 @@
 #!/bin/sh
-# Links coreutils.
+# Links.
 
 set -e
 
